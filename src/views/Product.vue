@@ -110,7 +110,7 @@ export default {
   },
   methods: {
     changeImage(urlImage){
-        this.default_photo = urlImage;
+        this.gambar_default = urlImage;
     }
   }
 }
