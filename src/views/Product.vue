@@ -2,7 +2,7 @@
   <div class="product">
     <HeaderShayna/>
     <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
+    <div class="breacrumb-section text-left">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="product-pic-zoom">
-                                <img class="product-big-img" src="img/mickey1.jpg" alt="" />
+                                <img class="product-big-img" :src="gambar_default" alt="" />
                             </div>
                             <div class="product-thumbs">
                                 <carousel :dots="false" :nav="false" class="product-thumbs-track ps-slider">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="product-details">
+                            <div class="product-details text-left">
                                 <div class="pd-title">
                                     <span>oranges</span>
                                     <h3>Pure Pineapple</h3>
@@ -95,6 +95,29 @@ export default {
     HeaderShayna,
     FooterShayna,
     carousel
+  },
+  data(){
+    return{
+        gambar_default: "img/mickey1.jpg",
+        thumbs: [
+            "img/mickey1.jpg",
+            "img/mickey2.jpg",
+            "img/mickey3.jpg",
+            "img/mickey4.jpg",
+
+        ]
+    }
+  },
+  methods: {
+    changeImage(urlImage){
+        this.default_photo = urlImage;
+    }
   }
 }
 </script>
+
+<style scoped>
+.product-thumbs .pt{
+    margin-right: 10px;
+}
+</style>
